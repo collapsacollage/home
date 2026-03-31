@@ -78,16 +78,17 @@
             filter: sepia(0) contrast(1) brightness(1);
         }
 
-        /* Estilo para el logo subido */
+        /* Estilo para el logo */
         .logo-img {
             max-height: 60px;
             width: auto;
-            /* Aplicamos un filtro para quitar el fondo blanco si lo tuviera y que sea transparente */
-            mix-blend-mode: multiply;
+            display: block;
+            object-fit: contain;
         }
+        
+        /* Eliminamos los mix-blend-mode que causaban invisibilidad si el fondo no era blanco puro */
         .dark .logo-img {
-            filter: invert(1) contrast(1.2) brightness(1.8);
-            mix-blend-mode: screen;
+            filter: brightness(1.2) contrast(1.1);
         }
     </style>
 </head>
@@ -97,9 +98,9 @@
     <!-- Navegación -->
     <nav class="sticky top-0 z-50 bg-paper-light/90 dark:bg-paper-dark/90 border-b border-gray-300 dark:border-gray-700 backdrop-blur-md torn-bottom pb-4 shadow-sm transition-colors duration-300">
         <div class="mx-auto px-4 pt-4 flex justify-between items-center max-w-7xl">
-            <!-- Logo actualizado con el archivo Logo.jpg -->
+            <!-- Logo principal corregido a logo.png -->
             <a href="#" class="transform hover:scale-105 transition flex items-center">
-                <img src="https://api.clover.com/v1/merchants/6S3X4S6W4S6W/logos/uploaded:Logo.jpg-a6f6eb6a-c176-4510-8f56-95f54a378554" alt="Collapsa Logo" class="logo-img" onerror="this.src='https://api.clover.com/v1/merchants/6S3X4S6W4S6W/logos/uploaded:Collage%20(2).jpg-e72a9152-96da-431f-9ab4-a13d23d5e7a2'"/>
+                <img src="logo.png" alt="Collapsa Logo" class="logo-img" onerror="this.src='Logo.jpg'"/>
             </a>
             
             <div class="flex items-center space-x-2 sm:space-x-4">
@@ -138,8 +139,8 @@
                 
                 <div class="absolute w-[70%] h-[80%] -left-4 md:-left-12 top-10 bg-white dark:bg-gray-800 p-3 pb-12 shadow-paper dark:shadow-paper-dark -rotate-6 transition hover:rotate-0 duration-500 z-10">
                     <div class="tape tape-2 -top-2 left-1/2 transform -translate-x-1/2"></div>
-                    <!-- Imagen destacada usando un estilo de collage -->
-                    <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?auto=format&fit=crop&q=80&w=800" alt="Retrato vintage collage" class="w-full h-full object-cover vintage-filter"/>
+                    <!-- Collage visual principal -->
+                    <img src="image_68f5e3.jpg" alt="Obra Collage Collapsa" class="w-full h-full object-cover vintage-filter" onerror="this.src='https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?auto=format&fit=crop&q=80&w=800'"/>
                 </div>
 
                 <div class="absolute w-[55%] h-[55%] right-0 md:-right-8 top-0 rounded-full overflow-hidden shadow-2xl border-4 border-paper-light dark:border-paper-dark z-20 transform rotate-12 hover:scale-105 transition duration-500">
@@ -194,7 +195,7 @@
                 <div class="break-inside-avoid relative group">
                     <div class="tape tape-1 left-1/2 transform -translate-x-1/2 -top-4"></div>
                     <div class="bg-white dark:bg-gray-800 p-4 pb-16 shadow-paper dark:shadow-paper-dark transform rotate-1 transition hover:rotate-0 duration-300">
-                        <img src="https://images.unsplash.com/photo-1497215848143-bcbea6ed2ce6?auto=format&fit=crop&q=80&w=600" alt="Collage botánico 1" class="w-full h-auto object-cover vintage-filter"/>
+                        <img src="https://images.unsplash.com/photo-1497215848143-bcbea6ed2ce6?auto=format&fit=crop&q=80&w=600" alt="Collage botánico" class="w-full h-auto object-cover vintage-filter"/>
                         <p class="absolute bottom-4 left-4 font-body text-xl text-gray-600 dark:text-gray-300">Anatomía Floral</p>
                     </div>
                 </div>
@@ -227,8 +228,8 @@
         <div class="absolute -top-4 right-10 tape tape-3 bg-white/30 backdrop-blur-md"></div>
         <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
-                <!-- Logo secundario en el footer -->
-                <img src="logo.png" alt="Logo Collapsa Footer" class="max-h-12 w-auto mb-2 filter invert brightness-200" onerror="this.style.display='none'"/>
+                <!-- Logo footer corregido -->
+                <img src="logo.png" alt="Logo Collapsa Footer" class="max-h-12 w-auto mb-2" onerror="this.style.display='none'"/>
                 <p class="font-sans text-gray-400 text-sm">Fragmentos y Reconstrucción</p>
             </div>
             <div class="flex flex-col items-center md:items-end">
